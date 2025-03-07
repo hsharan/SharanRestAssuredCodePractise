@@ -89,6 +89,46 @@ public class PathAndQuryParam {
 			.contentType(ContentType.JSON);
 		
 	}
+	
+	@Test
+	public void getAllFacilities_WithPathParams() {
+		RestAssured.baseURI = "https://qsdev-release-kinetic.epicorsaas.com";
+		given().log().all()
+		.header("Authorization","Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhZG1pbiIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL25hbWUiOiJhZG1pbiIsImludGVncmF0aW9uX3R5cGUiOiJFcGljb3IxMCIsInJlZ2lzdHJhdGlvbkNvZGUiOiJRdWlja1NoaXBEZW1vIiwiY29tcGFueUlkIjoiYjAwMjc2ZGEtODg4MC00ZGIxLWI0ZWQtYTM5ZWQ3Mzc5N2I2IiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy9hdXRoZW50aWNhdGlvbm1ldGhvZCI6IkJlYXJlciIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IklTQ19BZG1pbiIsImlzbmF0aXZlIjoiVHJ1ZSIsImNvbXBhbnlOYW1lIjoiRVBJQzA2IiwibmJmIjoxNzQxMDA3MzkyLCJleHAiOjE3NzI1NDMzOTIsImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6NTA4MC8iLCJhdWQiOiJxdWlja3NoaXAifQ.97bbftlRAJKvC-vHnWi5Mmvd3YbOp1nRNlqtc6lU2RE")
+		.when().log().all()
+		.get("/api/ngfacilities")
+		.then().log().all()
+		.assertThat()
+		.statusCode(200)
+		.and();
+		
+		
+	}
+	
+	@DataProvider
+	public Object[][] geFacilityData() {
+		return new Object[][] {
+			{"4a2735f8-80fa-4314-84fc-abf0008a123e"},
+			{"67d76779-a0e1-484b-a179-abfe008c84c8"},
+			{"009f68f9-e4d5-4d34-81fe-acb400955b7f"}
+		};
+	}
+	
+	@Test(dataProvider = "geFacilityData")
+	public void getAllFacilities_WithPathParamsDP(String facilityId)  {
+		RestAssured.baseURI = "https://qsdev-release-kinetic.epicorsaas.com";
+		given().log().all()
+		.header("Authorization","Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhZG1pbiIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL25hbWUiOiJhZG1pbiIsImludGVncmF0aW9uX3R5cGUiOiJFcGljb3IxMCIsInJlZ2lzdHJhdGlvbkNvZGUiOiJRdWlja1NoaXBEZW1vIiwiY29tcGFueUlkIjoiYjAwMjc2ZGEtODg4MC00ZGIxLWI0ZWQtYTM5ZWQ3Mzc5N2I2IiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy9hdXRoZW50aWNhdGlvbm1ldGhvZCI6IkJlYXJlciIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IklTQ19BZG1pbiIsImlzbmF0aXZlIjoiVHJ1ZSIsImNvbXBhbnlOYW1lIjoiRVBJQzA2IiwibmJmIjoxNzQxMDA3MzkyLCJleHAiOjE3NzI1NDMzOTIsImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6NTA4MC8iLCJhdWQiOiJxdWlja3NoaXAifQ.97bbftlRAJKvC-vHnWi5Mmvd3YbOp1nRNlqtc6lU2RE")
+		.pathParam("facilityId", facilityId)
+		.when().log().all()
+		.get("/api/ngfacilities/{facilityId}")
+		.then().log().all()
+		.assertThat()
+		.statusCode(200)
+		.and();
+		
+		
+	}
 
 }
 

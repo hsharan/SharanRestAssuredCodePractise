@@ -135,4 +135,33 @@ public void FetchNestedData_with_JsonPath() {
 	
 	
 }
+
+@Test
+public void facility_FetchNestedData_with_JsonPath() {
+	RestAssured.baseURI = "https://qsdev-release-kinetic.epicorsaas.com";
+	Response response  = given().log().all()
+	.header("Authorization","Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhZG1pbiIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL25hbWUiOiJhZG1pbiIsImludGVncmF0aW9uX3R5cGUiOiJFcGljb3IxMCIsInJlZ2lzdHJhdGlvbkNvZGUiOiJRdWlja1NoaXBEZW1vIiwiY29tcGFueUlkIjoiYjAwMjc2ZGEtODg4MC00ZGIxLWI0ZWQtYTM5ZWQ3Mzc5N2I2IiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy9hdXRoZW50aWNhdGlvbm1ldGhvZCI6IkJlYXJlciIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IklTQ19BZG1pbiIsImlzbmF0aXZlIjoiVHJ1ZSIsImNvbXBhbnlOYW1lIjoiRVBJQzA2IiwibmJmIjoxNzQxMDA3MzkyLCJleHAiOjE3NzI1NDMzOTIsImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6NTA4MC8iLCJhdWQiOiJxdWlja3NoaXAifQ.97bbftlRAJKvC-vHnWi5Mmvd3YbOp1nRNlqtc6lU2RE")
+	.when().log().all()
+	.get("/api/ngfacilities");
+	
+	response.prettyPrint();
+	JsonPath js = response.jsonPath();
+	
+	List<Object> facilityId = js.getList("result.facilities.facilityId");
+	System.out.println(facilityId);
+	System.out.println("=========");
+	
+	//description
+	
+	List<String> description = js.getList("result.facilities.description");
+	System.out.println(description);
+	System.out.println("=========");
+	
+	for(int i=0; i<facilityId.size();i++) {
+		
+		Object fId = facilityId.get(i);
+		String desc = description.get(i);
+		System.out.println("facilityId: " + fId + " Description : " +desc );
+	}
+}
 }
