@@ -3,11 +3,11 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="brrStyle.WithBDDStyle">
+      <class name="brrStyle.InvalidTokenWithMessageValidation">
         <methods>
-          <include name="getAllProduct"/>
+          <include name="FetchNestedData_with_JsonPath"/>
         </methods>
-      </class> <!-- brrStyle.WithBDDStyle -->
+      </class> <!-- brrStyle.InvalidTokenWithMessageValidation -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

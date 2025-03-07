@@ -7,9 +7,6 @@ import org.testng.annotations.Test;
 
 import io.restassured.RestAssured;
 
-
-
-
 public class WithBDDStyle {
 	@BeforeMethod
 	public void setUp() {

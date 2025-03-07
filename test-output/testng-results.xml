@@ -1,45 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="4" passed="4" failed="0" skipped="0">
+<testng-results ignored="4" total="5" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-03-05T15:45:36 IST" name="Default suite" finished-at="2025-03-05T15:46:12 IST" duration-ms="35675">
+  <suite started-at="2025-03-07T13:27:33 IST" name="Default suite" finished-at="2025-03-07T13:27:46 IST" duration-ms="13218">
     <groups>
     </groups>
-    <test started-at="2025-03-05T15:45:36 IST" name="Default test" finished-at="2025-03-05T15:46:12 IST" duration-ms="35675">
-      <class name="brrStyle.WithBDDStyle">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:brrStyle.WithBDDStyle@3f6f6701]" started-at="2025-03-05T15:45:37 IST" name="setUp" finished-at="2025-03-05T15:45:44 IST" duration-ms="6693" status="PASS">
+    <test started-at="2025-03-07T13:27:33 IST" name="Default test" finished-at="2025-03-07T13:27:46 IST" duration-ms="13218">
+      <class name="brrStyle.InvalidTokenWithMessageValidation">
+        <test-method signature="FetchNestedData_with_JsonPath()[pri:0, instance:brrStyle.InvalidTokenWithMessageValidation@53aac487]" started-at="2025-03-07T13:27:33 IST" name="FetchNestedData_with_JsonPath" finished-at="2025-03-07T13:27:46 IST" duration-ms="13099" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method signature="getAboutDeatils()[pri:0, instance:brrStyle.WithBDDStyle@3f6f6701]" started-at="2025-03-05T15:45:44 IST" name="getAboutDeatils" finished-at="2025-03-05T15:46:08 IST" duration-ms="23844" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- getAboutDeatils -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:brrStyle.WithBDDStyle@3f6f6701]" started-at="2025-03-05T15:46:08 IST" name="setUp" finished-at="2025-03-05T15:46:08 IST" duration-ms="4" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method signature="getAllFacilities()[pri:0, instance:brrStyle.WithBDDStyle@3f6f6701]" started-at="2025-03-05T15:46:08 IST" name="getAllFacilities" finished-at="2025-03-05T15:46:09 IST" duration-ms="1538" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- getAllFacilities -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:brrStyle.WithBDDStyle@3f6f6701]" started-at="2025-03-05T15:46:09 IST" name="setUp" finished-at="2025-03-05T15:46:09 IST" duration-ms="10" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method signature="getAllWorkStationDeatils()[pri:0, instance:brrStyle.WithBDDStyle@3f6f6701]" started-at="2025-03-05T15:46:09 IST" name="getAllWorkStationDeatils" finished-at="2025-03-05T15:46:11 IST" duration-ms="1353" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- getAllWorkStationDeatils -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:brrStyle.WithBDDStyle@3f6f6701]" started-at="2025-03-05T15:46:11 IST" name="setUp" finished-at="2025-03-05T15:46:11 IST" duration-ms="26" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method signature="getRESTSettingDeatils()[pri:0, instance:brrStyle.WithBDDStyle@3f6f6701]" started-at="2025-03-05T15:46:11 IST" name="getRESTSettingDeatils" finished-at="2025-03-05T15:46:12 IST" duration-ms="1242" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- getRESTSettingDeatils -->
-      </class> <!-- brrStyle.WithBDDStyle -->
+        </test-method> <!-- FetchNestedData_with_JsonPath -->
+      </class> <!-- brrStyle.InvalidTokenWithMessageValidation -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
